@@ -196,9 +196,13 @@ Quick product context. The service we just talked about powers BrowserOS neo: a 
 layout: statement
 ---
 
-# Your types are only as portable as your <strong>contract</strong>.
+# How do you rewrite the server in Rust and never touch the <strong>TypeScript</strong> client?
 
-<div style="color: var(--color-ash); font-size: 1.3rem; margin-top: 1rem;">That is the whole talk. This is a TypeScript talk, not a Rust one.</div>
+<div style="color: var(--color-ash); font-size: 1.3rem; margin-top: 1rem;">This is a TypeScript talk. Not a Rust one.</div>
+
+<!--
+This is the question the whole talk answers. We changed the server's language. The TypeScript app on the other side did not change a line. How is that even possible? Everything after this slide is the answer.
+-->
 
 ---
 
