@@ -648,14 +648,20 @@ layout: section
 
 ## Six moves that make a large refactor an agent can do.
 
-<div class="grid grid-cols-2 gap-4" style="margin-top: 1.2rem;">
-  <div class="card"><div class="card-k">01</div><div class="card-t">A patterns map</div><div class="card-b">Bun's PORTING.md, our framework-parity table. Make the port mechanical.</div></div>
-  <div class="card"><div class="card-k">02</div><div class="card-t">Plan-first, tiny tasks</div><div class="card-b">Failing test, minimal code, pass, commit. No placeholders.</div></div>
-  <div class="card"><div class="card-k">03</div><div class="card-t">A language-independent oracle</div><div class="card-b">A test suite or a differential harness that writes your to-do list.</div></div>
-  <div class="card"><div class="card-k">04</div><div class="card-t">Contract-first codegen</div><div class="card-b">So drift is a build failure, not a bug report.</div></div>
-  <div class="card"><div class="card-k">05</div><div class="card-t">Adversarial review</div><div class="card-b">Reviewer sees only the diff, assumes it is wrong, validation pass drops noise.</div></div>
-  <div class="card"><div class="card-k">06</div><div class="card-t">Parallelism + a hard gate</div><div class="card-b">Git worktrees, and a fixed verify loop every PR must pass.</div></div>
+<div class="grid grid-cols-3 gap-4 wf" style="margin-top: 1.4rem;">
+  <div class="card"><div class="card-k">01</div><div class="card-t">A patterns map</div><div class="card-b">Bun's PORTING.md, our parity table. Make the port mechanical.</div></div>
+  <div class="card"><div class="card-k">02</div><div class="card-t">Plan-first, tiny tasks</div><div class="card-b">Failing test, minimal code, pass, commit.</div></div>
+  <div class="card"><div class="card-k">03</div><div class="card-t">A neutral oracle</div><div class="card-b">A test suite or harness that writes the to-do list.</div></div>
+  <div class="card"><div class="card-k">04</div><div class="card-t">Contract-first codegen</div><div class="card-b">Drift becomes a build failure.</div></div>
+  <div class="card"><div class="card-k">05</div><div class="card-t">Adversarial review</div><div class="card-b">Reviewer sees only the diff, assumes it is wrong.</div></div>
+  <div class="card"><div class="card-k">06</div><div class="card-t">Parallelism + a gate</div><div class="card-b">Worktrees, and a fixed verify loop per PR.</div></div>
 </div>
+
+<style>
+.wf .card { padding: 0.9rem 1rem; }
+.wf .card-t { font-size: 1.05rem; margin-bottom: 0.3rem; }
+.wf .card-b { font-size: 0.9rem; line-height: 1.32; }
+</style>
 
 ---
 layout: statement
