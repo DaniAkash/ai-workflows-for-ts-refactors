@@ -80,22 +80,45 @@ A quick hello. I work on the seams where humans and agents meet: browsers, termi
 
 ---
 
-<div class="eyebrow">The signal</div>
+<div class="eyebrow">May 2026</div>
 
-## In 11 days, Bun rewrote itself in a new language.
+## Bun rewrote itself in <strong>Rust</strong>.
 
-<div style="margin-top: 1.8rem;">
-<StatCard :items="[
-  { n: '535k', l: 'lines of Zig, ported to Rust' },
-  { n: '11', l: 'days · 6,502 commits' },
-  { n: '~64', l: 'Claude instances in parallel' },
-]" />
+<div style="font-size: 1.3rem; color: var(--color-steel); margin-top: 0.6rem; max-width: 54ch;">Half a million lines of Zig, ported in 11 days, almost entirely by a fleet of Claude agents.</div>
+
+<div class="grid grid-cols-2 gap-4 bun-how" style="margin-top: 1.5rem;">
+  <div class="card" v-click>
+    <div class="card-k">Parallelism</div>
+    <div class="card-t">~64 agents at once</div>
+    <div class="card-b">Claude instances across 4 git worktrees. 6,502 commits.</div>
+  </div>
+  <div class="card" v-click>
+    <div class="card-k">A patterns map</div>
+    <div class="card-t">PORTING.md</div>
+    <div class="card-b">Every Zig idiom mapped to its Rust twin, so the port stayed mechanical.</div>
+  </div>
+  <div class="card" v-click>
+    <div class="card-k">Adversarial review</div>
+    <div class="card-t">Assume it is wrong</div>
+    <div class="card-b">A second agent saw only the diff and tried to break it.</div>
+  </div>
+  <div class="card" v-click>
+    <div class="card-k">The oracle</div>
+    <div class="card-t">The test suite</div>
+    <div class="card-b">Bun's TypeScript tests had to be 100% green in CI before merge.</div>
+  </div>
 </div>
 
-<div class="caption">bun.com/blog/bun-in-rust · validated by the existing TypeScript test suite</div>
+<div class="caption">bun.com/blog/bun-in-rust</div>
+
+<style>
+.bun-how .card { padding: 0.85rem 1rem; }
+.bun-how .card-t { font-size: 1.1rem; margin-bottom: 0.25rem; }
+.bun-how .card-b { font-size: 0.88rem; line-height: 1.32; }
+</style>
 
 <!--
-Bun is a JavaScript runtime, half a million lines of Zig. In May they rewrote the whole thing in Rust in eleven days, using dozens of Claude instances in parallel. Large AI-driven language rewrites are now a real, repeatable thing.
+Bun is a JavaScript runtime, half a million lines of Zig. A few months ago they rewrote the whole thing in Rust in eleven days. Here is HOW they did it with AI. [click through the four cards] Parallel agents, a patterns map so the port was mechanical, an adversarial reviewer told to assume the code is wrong, and the existing test suite as the pass-or-fail oracle. Hold onto these four. Our story uses the same moves.
 -->
 
 ---
