@@ -44,23 +44,81 @@ Hi, I am Dani. This is a TypeScript talk that spends a lot of time in Rust. Stay
 -->
 
 ---
+layout: two-cols
+layoutClass: gap-12
+---
 
-<div class="eyebrow">The signal</div>
+<div class="eyebrow">Introductions</div>
 
-## In 11 days, Bun rewrote itself in a new language.
+<h1 style="font-size: 3rem; margin: 0.4rem 0 0 0;">Hi, I'm <strong>Dani</strong>.</h1>
 
-<div style="margin-top: 1.8rem;">
-<StatCard :items="[
-  { n: '535k', l: 'lines of Zig, ported to Rust' },
-  { n: '11', l: 'days · 6,502 commits' },
-  { n: '~64', l: 'Claude instances in parallel' },
-]" />
+<div style="font-size: 1.4rem; margin-top: 0.4rem;">Founding Engineer at BrowserOS <span style="color: var(--color-ash)">·</span> YC S24</div>
+
+<div style="font-size: 1.2rem; color: var(--color-steel); margin-top: 1.6rem; max-width: 30ch; line-height: 1.5;">I build browsers, terminals, and AI assistants. The seams where humans and agents meet.</div>
+
+::right::
+
+<div class="card meproj-card">
+  <div class="card-k">Open source</div>
+  <div class="meproj"><div class="meproj-n">BrowserOS</div><div class="meproj-d">Open-source agentic browser.</div></div>
+  <div class="meproj"><div class="meproj-n">Agent Terminal</div><div class="meproj-d">A terminal where coding agents are first-class.</div></div>
+  <div class="meproj"><div class="meproj-n">Herbie</div><div class="meproj-d">One command center for every AI agent.</div></div>
+  <div class="meproj"><div class="meproj-n">acpx-tools</div><div class="meproj-d">Headless ACP toolkit for driving agents.</div></div>
+  <div class="mono meproj-link">github.com/DaniAkash</div>
 </div>
 
-<div class="caption">bun.com/blog/bun-in-rust · validated by the existing TypeScript test suite</div>
+<style>
+.meproj-card { display: flex; flex-direction: column; gap: 0.9rem; }
+.meproj-n { font-weight: 600; font-size: 1.2rem; letter-spacing: -0.01em; }
+.meproj-d { color: var(--color-steel); font-size: 0.95rem; line-height: 1.35; }
+.meproj-link { font-size: 0.8rem; color: var(--color-signal-orange); margin-top: 0.3rem; }
+</style>
 
 <!--
-Bun is a JavaScript runtime, half a million lines of Zig. In May they rewrote the whole thing in Rust in eleven days, using dozens of Claude instances in parallel. Large AI-driven language rewrites are now a real, repeatable thing.
+A quick hello. I work on the seams where humans and agents meet: browsers, terminals, assistants. Two of these, BrowserOS and Agent Terminal, show up later as the case studies.
+-->
+
+---
+
+<div class="eyebrow">May 2026</div>
+
+## Bun rewrote itself in <strong>Rust</strong>.
+
+<div style="font-size: 1.3rem; color: var(--color-steel); margin-top: 0.6rem; max-width: 54ch;">Half a million lines of Zig, ported in 11 days, almost entirely by a fleet of Claude agents.</div>
+
+<div class="grid grid-cols-2 gap-4 bun-how" style="margin-top: 1.5rem;">
+  <div class="card" v-click>
+    <div class="card-k">Parallelism</div>
+    <div class="card-t">~64 agents at once</div>
+    <div class="card-b">Claude instances across 4 git worktrees. 6,502 commits.</div>
+  </div>
+  <div class="card" v-click>
+    <div class="card-k">A patterns map</div>
+    <div class="card-t">PORTING.md</div>
+    <div class="card-b">Every Zig idiom mapped to its Rust twin, so the port stayed mechanical.</div>
+  </div>
+  <div class="card" v-click>
+    <div class="card-k">Adversarial review</div>
+    <div class="card-t">Assume it is wrong</div>
+    <div class="card-b">A second agent saw only the diff and tried to break it.</div>
+  </div>
+  <div class="card" v-click>
+    <div class="card-k">The oracle</div>
+    <div class="card-t">The test suite</div>
+    <div class="card-b">Bun's TypeScript tests had to be 100% green in CI before merge.</div>
+  </div>
+</div>
+
+<div class="caption">bun.com/blog/bun-in-rust</div>
+
+<style>
+.bun-how .card { padding: 0.85rem 1rem; }
+.bun-how .card-t { font-size: 1.1rem; margin-bottom: 0.25rem; }
+.bun-how .card-b { font-size: 0.88rem; line-height: 1.32; }
+</style>
+
+<!--
+Bun is a JavaScript runtime, half a million lines of Zig. A few months ago they rewrote the whole thing in Rust in eleven days. Here is HOW they did it with AI. [click through the four cards] Parallel agents, a patterns map so the port was mechanical, an adversarial reviewer told to assume the code is wrong, and the existing test suite as the pass-or-fail oracle. Hold onto these four. Our story uses the same moves.
 -->
 
 ---
@@ -78,12 +136,73 @@ We did a smaller version of this at BrowserOS. And the interesting part is not t
 -->
 
 ---
+layout: default
+class: neo-slide
+---
+
+<div class="neo-top">
+  <span class="neo-logo"><span class="neo-b">BrowserOS</span> <span class="neo-neo">neo</span></span>
+  <span class="neo-ph">browseros.com/neo</span>
+</div>
+
+<div class="grid grid-cols-2 gap-14 neo-main">
+  <div>
+    <div class="neo-eyebrow">Browser for AI agents</div>
+    <h1 class="neo-h1">The Missing <em>Browser</em> for Claude, Cowork &amp; Codex.</h1>
+    <p class="neo-body">A free, open-source browser your agents drive with your <strong>logged-in accounts</strong>. Import your Chrome logins in one click, connect the agent, and hand off the boring tabs.</p>
+  </div>
+  <div class="neo-feats">
+    <div class="neo-feat"><div class="neo-flabel">Privacy-first</div><div class="neo-fval">Browsing data never leaves your machine.</div></div>
+    <div class="neo-feat"><div class="neo-flabel">Chrome import</div><div class="neo-fval">One click. Bring your logins.</div></div>
+    <div class="neo-feat"><div class="neo-flabel">Run many</div><div class="neo-fval">A fleet of agents at once.</div></div>
+    <div class="neo-feat"><div class="neo-flabel">Replay</div><div class="neo-fval">See exactly what each one did.</div></div>
+  </div>
+</div>
+
+<div class="neo-tie">Its local backend, <strong>claw-server</strong>, is the service we rewrote. That is case study one.</div>
+
+<style>
+.neo-slide.slidev-layout {
+  background: #ffffff;
+  background-image: none;
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  color: #374151;
+  padding: 2.6rem 3.4rem;
+  letter-spacing: normal;
+}
+.neo-slide .neo-top { display: flex; align-items: baseline; justify-content: space-between; }
+.neo-slide .neo-logo { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; }
+.neo-slide .neo-b { color: #1d4ed8; }
+.neo-slide .neo-neo { color: #1d4ed8; font-family: 'EB Garamond', Georgia, serif; font-style: italic; font-weight: 500; }
+.neo-slide .neo-ph { font-size: 0.85rem; color: #9ca3af; }
+.neo-slide .neo-main { align-items: start; margin-top: 1.8rem; }
+.neo-slide .neo-eyebrow { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.18em; color: #9ca3af; font-weight: 600; }
+.neo-slide .neo-h1 { font-family: 'EB Garamond', Georgia, serif; font-weight: 400; font-size: 3rem; line-height: 1.08; color: #393f49; margin: 0.5rem 0 0 0; letter-spacing: 0; }
+.neo-slide .neo-h1 em { color: #1d4ed8; font-style: italic; }
+.neo-slide .neo-body { font-family: 'Inter', sans-serif; font-size: 1.12rem; color: #4b5563; line-height: 1.5; margin-top: 1.3rem; max-width: 34ch; }
+.neo-slide .neo-body strong { color: #111827; font-weight: 700; }
+.neo-slide .neo-feats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem 1.4rem; padding-top: 0.4rem; }
+.neo-slide .neo-flabel { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: #9ca3af; font-weight: 700; }
+.neo-slide .neo-fval { font-size: 1rem; color: #374151; margin-top: 0.35rem; line-height: 1.35; }
+.neo-slide .neo-tie { margin-top: 2rem; font-size: 1rem; color: #6b7280; }
+.neo-slide .neo-tie strong { color: #1d4ed8; font-weight: 600; }
+</style>
+
+<!--
+Quick product context. The service we just talked about powers BrowserOS neo: a free, open-source browser that AI agents drive using your real, logged-in accounts. Import your Chrome logins, point Claude Code or Codex at it, run a fleet at once, and replay what they did. Its local backend is claw-server, which is exactly the TypeScript-to-Rust case study we are about to walk through.
+-->
+
+---
 layout: statement
 ---
 
-# Your types are only as portable as your <strong>contract</strong>.
+# How do you rewrite the server in Rust and never touch the <strong>TypeScript</strong> client?
 
-<div style="color: var(--color-ash); font-size: 1.3rem; margin-top: 1rem;">That is the whole talk. This is a TypeScript talk, not a Rust one.</div>
+<div style="color: var(--color-ash); font-size: 1.3rem; margin-top: 1rem;">This is a TypeScript talk. Not a Rust one.</div>
+
+<!--
+This is the question the whole talk answers. We changed the server's language. The TypeScript app on the other side did not change a line. How is that even possible? Everything after this slide is the answer.
+-->
 
 ---
 
@@ -287,7 +406,7 @@ layout: statement
 
 # Now the server can be anything. <strong>It became Rust.</strong>
 
-<div class="mono" style="color: var(--color-ash); font-size: 1.05rem; margin-top: 1rem;">axum · sea-orm · rmcp &nbsp;·&nbsp; phased over about a month · 98 commits</div>
+<div class="mono" style="color: var(--color-ash); font-size: 1.05rem; margin-top: 1rem;">axum · sea-orm · rmcp &nbsp;·&nbsp; phased A to D · 98 commits</div>
 
 ---
 
@@ -408,7 +527,7 @@ layout: statement
 <StatCard :items="[
   { n: '205/205', l: 'cross-server tests passing' },
   { n: '37', l: 'agent review · 10 findings fixed' },
-  { n: '98', l: 'commits · about one month' },
+  { n: '98', l: 'commits, all test-gated' },
 ]" />
 </div>
 
@@ -591,6 +710,14 @@ export type ClientFrame =
   </div>
 </div>
 
+<!--
+Two real seams where Rust and JavaScript disagree, both straight from agent-terminal's protocol.rs.
+
+u64 to number. JavaScript numbers are floats, so they only safely hold integers up to 2 to the 53rd. Rust's u64 is 64 bits. typeshare actually refuses to emit a raw u64, because it cannot map it safely. The escape hatch is `#[typeshare(serialized_as = "u32")]`: it tells typeshare to generate the TypeScript type as if the field were a u32, so TS sees `number`, while the Rust value and the JSON on the wire stay a real u64. That is how the protocol's seq and last_seq counters keep full precision without lying to TypeScript.
+
+omit vs null. In serde, an Option field marked `skip_serializing_if = "Option::is_none"` is omitted from the JSON when it is None: the key is simply not there. typeshare generates that as `field?: string` in TypeScript, meaning a string or absent. If serde instead sent `"field": null`, it would break that generated optional contract. So skip_serializing_if keeps the wire shape matching the generated optional field, and tests pin the exact JSON so it can never drift.
+-->
+
 ---
 layout: statement
 ---
@@ -678,15 +805,33 @@ layout: statement
 <div style="color: var(--color-ash); font-size: 1.3rem; margin-top: 1rem;">Because the contract was the real source of truth.</div>
 
 ---
-layout: cover
+layout: two-cols
+layoutClass: gap-12
 ---
 
 <div class="eyebrow">Thank you</div>
 
-<h1 style="font-size: 3rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; max-width: 24ch; margin: 0;">TypeScript's superpower is not <span style="color: var(--color-signal-orange)">hc&lt;AppType&gt;</span>. It is a contract that outlives the language.</h1>
+<h1 style="font-size: 2.3rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.12; max-width: 20ch; margin: 0.4rem 0 0 0;">TypeScript's superpower is not <code>hc&lt;AppType&gt;</code>. It is a <strong>contract</strong> that outlives the language.</h1>
 
-<div class="mono" style="color: var(--color-steel); font-size: 1rem; margin-top: 1.8rem;">github.com/DaniAkash &nbsp;·&nbsp; browseros.com</div>
+<div style="color: var(--color-steel); font-size: 1.1rem; margin-top: 1.4rem; max-width: 32ch;">Questions, war stories, counter-takes. The slides are public.</div>
+
+::right::
+
+<div class="contacts">
+  <div class="crow"><span class="clabel">GitHub</span><span class="cval">@DaniAkash</span></div>
+  <div class="crow"><span class="clabel">X</span><span class="cval">@dani_akash_</span></div>
+  <div class="crow"><span class="clabel">Web</span><span class="cval">daniakash.com</span></div>
+  <div class="crow"><span class="clabel">Slides</span><span class="cval" style="font-size: 1.05rem;">github.com/DaniAkash/ai-workflows-for-ts-refactors</span></div>
+</div>
+
+<style>
+.contacts { display: flex; flex-direction: column; margin-top: 1rem; }
+.crow { display: flex; flex-direction: column; gap: 0.2rem; padding: 0.9rem 0; border-top: 1px solid rgba(0,0,0,0.14); }
+.crow:last-child { border-bottom: 1px solid rgba(0,0,0,0.14); }
+.clabel { font-family: var(--font-geist-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--color-steel); }
+.cval { font-weight: 600; font-size: 1.5rem; letter-spacing: -0.01em; }
+</style>
 
 <!--
-Questions. And if you take one thing home: make the contract a real artifact, generate both sides, and let the agents do the rest.
+Questions. If you take one thing home: make the contract a real artifact, generate both sides, and let the agents do the rest.
 -->

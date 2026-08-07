@@ -2,6 +2,14 @@
 @import '@fontsource-variable/geist/index.css';
 @import '@fontsource-variable/geist-mono/index.css';
 
+/* BrowserOS neo brand fonts, used ONLY on the neo product slide */
+@import '@fontsource/eb-garamond/400.css';
+@import '@fontsource/eb-garamond/400-italic.css';
+@import '@fontsource/eb-garamond/500.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+
 :root {
   --color-signal-orange: #ff5b29;
   --color-chartreuse-highlight: #f5ff80;
@@ -165,10 +173,12 @@
 
 /* Code line focus: dim the non-highlighted lines (Slidev default behavior),
    plus a thin signal-orange marker on the focused lines. */
-.slidev-layout .slidev-code .line.highlighted {
+.slidev-layout .slidev-code:has(.line.highlighted) .line.highlighted {
   background: rgba(255, 91, 41, 0.10);
 }
-.slidev-layout .slidev-code .line:not(.highlighted) {
+/* Only dim other lines when the block actually has a highlighted line.
+   Without :has(), a code block with no `{...}` annotation would dim every line. */
+.slidev-layout .slidev-code:has(.line.highlighted) .line:not(.highlighted) {
   opacity: 0.4;
   filter: grayscale(0.4);
 }
