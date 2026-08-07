@@ -710,6 +710,14 @@ export type ClientFrame =
   </div>
 </div>
 
+<!--
+Two real seams where Rust and JavaScript disagree, both straight from agent-terminal's protocol.rs.
+
+u64 to number. JavaScript numbers are floats, so they only safely hold integers up to 2 to the 53rd. Rust's u64 is 64 bits. typeshare actually refuses to emit a raw u64, because it cannot map it safely. The escape hatch is `#[typeshare(serialized_as = "u32")]`: it tells typeshare to generate the TypeScript type as if the field were a u32, so TS sees `number`, while the Rust value and the JSON on the wire stay a real u64. That is how the protocol's seq and last_seq counters keep full precision without lying to TypeScript.
+
+omit vs null. In serde, an Option field marked `skip_serializing_if = "Option::is_none"` is omitted from the JSON when it is None: the key is simply not there. typeshare generates that as `field?: string` in TypeScript, meaning a string or absent. If serde instead sent `"field": null`, it would break that generated optional contract. So skip_serializing_if keeps the wire shape matching the generated optional field, and tests pin the exact JSON so it can never drift.
+-->
+
 ---
 layout: statement
 ---
