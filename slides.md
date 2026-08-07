@@ -296,7 +296,7 @@ layout: statement
 ## Handlers return the generated contract type. Directly.
 
 ```rust {all|1|3-6|7}
-use claw_api::models::{CockpitStats, CockpitStatsWindow};
+use claw_api::models::CockpitStats;
 
 pub async fn stats(
     State(state): State<AppState>,
@@ -339,13 +339,13 @@ type Row = typeof toolDispatches.$inferSelect
 
 ```rust
 #[derive(Clone, Debug, DeriveEntityModel)]
-#[sea_orm(table_name = "tasks")]
+#[sea_orm(table_name = "tool_dispatches")]
 pub struct Model {
     #[sea_orm(primary_key)]
-    pub session_id: String,
+    pub id: i64,
     pub agent_id: String,
-    pub status: String,
-    pub duration_ms: i64,
+    pub tool_name: String,
+    pub duration_ms: Option<i64>,
 }
 ```
 
