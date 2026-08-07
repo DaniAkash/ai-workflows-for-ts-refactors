@@ -44,6 +44,41 @@ Hi, I am Dani. This is a TypeScript talk that spends a lot of time in Rust. Stay
 -->
 
 ---
+layout: two-cols
+layoutClass: gap-12
+---
+
+<div class="eyebrow">Introductions</div>
+
+<h1 style="font-size: 3rem; margin: 0.4rem 0 0 0;">Hi, I'm <strong>Dani</strong>.</h1>
+
+<div style="font-size: 1.4rem; margin-top: 0.4rem;">Founding Engineer at BrowserOS <span style="color: var(--color-ash)">·</span> YC S24</div>
+
+<div style="font-size: 1.2rem; color: var(--color-steel); margin-top: 1.6rem; max-width: 30ch; line-height: 1.5;">I build browsers, terminals, and AI assistants. The seams where humans and agents meet.</div>
+
+::right::
+
+<div class="card meproj-card">
+  <div class="card-k">Open source</div>
+  <div class="meproj"><div class="meproj-n">BrowserOS</div><div class="meproj-d">Open-source agentic browser.</div></div>
+  <div class="meproj"><div class="meproj-n">Agent Terminal</div><div class="meproj-d">A terminal where coding agents are first-class.</div></div>
+  <div class="meproj"><div class="meproj-n">Herbie</div><div class="meproj-d">One command center for every AI agent.</div></div>
+  <div class="meproj"><div class="meproj-n">acpx-tools</div><div class="meproj-d">Headless ACP toolkit for driving agents.</div></div>
+  <div class="mono meproj-link">github.com/DaniAkash</div>
+</div>
+
+<style>
+.meproj-card { display: flex; flex-direction: column; gap: 0.9rem; }
+.meproj-n { font-weight: 600; font-size: 1.2rem; letter-spacing: -0.01em; }
+.meproj-d { color: var(--color-steel); font-size: 0.95rem; line-height: 1.35; }
+.meproj-link { font-size: 0.8rem; color: var(--color-signal-orange); margin-top: 0.3rem; }
+</style>
+
+<!--
+A quick hello. I work on the seams where humans and agents meet: browsers, terminals, assistants. Two of these, BrowserOS and Agent Terminal, show up later as the case studies.
+-->
+
+---
 
 <div class="eyebrow">The signal</div>
 
@@ -678,15 +713,33 @@ layout: statement
 <div style="color: var(--color-ash); font-size: 1.3rem; margin-top: 1rem;">Because the contract was the real source of truth.</div>
 
 ---
-layout: cover
+layout: two-cols
+layoutClass: gap-12
 ---
 
 <div class="eyebrow">Thank you</div>
 
-<h1 style="font-size: 3rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; max-width: 24ch; margin: 0;">TypeScript's superpower is not <span style="color: var(--color-signal-orange)">hc&lt;AppType&gt;</span>. It is a contract that outlives the language.</h1>
+<h1 style="font-size: 2.3rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.12; max-width: 20ch; margin: 0.4rem 0 0 0;">TypeScript's superpower is not <code>hc&lt;AppType&gt;</code>. It is a <strong>contract</strong> that outlives the language.</h1>
 
-<div class="mono" style="color: var(--color-steel); font-size: 1rem; margin-top: 1.8rem;">github.com/DaniAkash &nbsp;·&nbsp; browseros.com</div>
+<div style="color: var(--color-steel); font-size: 1.1rem; margin-top: 1.4rem; max-width: 32ch;">Questions, war stories, counter-takes. The slides are public.</div>
+
+::right::
+
+<div class="contacts">
+  <div class="crow"><span class="clabel">GitHub</span><span class="cval">@DaniAkash</span></div>
+  <div class="crow"><span class="clabel">X</span><span class="cval">@dani_akash_</span></div>
+  <div class="crow"><span class="clabel">Web</span><span class="cval">daniakash.com</span></div>
+  <div class="crow"><span class="clabel">Slides</span><span class="cval" style="font-size: 1.05rem;">github.com/DaniAkash/ai-workflows-for-ts-refactors</span></div>
+</div>
+
+<style>
+.contacts { display: flex; flex-direction: column; margin-top: 1rem; }
+.crow { display: flex; flex-direction: column; gap: 0.2rem; padding: 0.9rem 0; border-top: 1px solid rgba(0,0,0,0.14); }
+.crow:last-child { border-bottom: 1px solid rgba(0,0,0,0.14); }
+.clabel { font-family: var(--font-geist-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--color-steel); }
+.cval { font-weight: 600; font-size: 1.5rem; letter-spacing: -0.01em; }
+</style>
 
 <!--
-Questions. And if you take one thing home: make the contract a real artifact, generate both sides, and let the agents do the rest.
+Questions. If you take one thing home: make the contract a real artifact, generate both sides, and let the agents do the rest.
 -->
