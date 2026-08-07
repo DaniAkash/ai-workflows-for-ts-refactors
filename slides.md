@@ -136,6 +136,63 @@ We did a smaller version of this at BrowserOS. And the interesting part is not t
 -->
 
 ---
+layout: default
+class: neo-slide
+---
+
+<div class="neo-top">
+  <span class="neo-logo"><span class="neo-b">BrowserOS</span> <span class="neo-neo">neo</span></span>
+  <span class="neo-ph">browseros.com/neo</span>
+</div>
+
+<div class="grid grid-cols-2 gap-14 neo-main">
+  <div>
+    <div class="neo-eyebrow">Browser for AI agents</div>
+    <h1 class="neo-h1">The Missing <em>Browser</em> for Claude, Cowork &amp; Codex.</h1>
+    <p class="neo-body">A free, open-source browser your agents drive with your <strong>logged-in accounts</strong>. Import your Chrome logins in one click, connect the agent, and hand off the boring tabs.</p>
+  </div>
+  <div class="neo-feats">
+    <div class="neo-feat"><div class="neo-flabel">Privacy-first</div><div class="neo-fval">Browsing data never leaves your machine.</div></div>
+    <div class="neo-feat"><div class="neo-flabel">Chrome import</div><div class="neo-fval">One click. Bring your logins.</div></div>
+    <div class="neo-feat"><div class="neo-flabel">Run many</div><div class="neo-fval">A fleet of agents at once.</div></div>
+    <div class="neo-feat"><div class="neo-flabel">Replay</div><div class="neo-fval">See exactly what each one did.</div></div>
+  </div>
+</div>
+
+<div class="neo-tie">Its local backend, <strong>claw-server</strong>, is the service we rewrote. That is case study one.</div>
+
+<style>
+.neo-slide.slidev-layout {
+  background: #ffffff;
+  background-image: none;
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  color: #374151;
+  padding: 2.6rem 3.4rem;
+  letter-spacing: normal;
+}
+.neo-slide .neo-top { display: flex; align-items: baseline; justify-content: space-between; }
+.neo-slide .neo-logo { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; }
+.neo-slide .neo-b { color: #1d4ed8; }
+.neo-slide .neo-neo { color: #1d4ed8; font-family: 'EB Garamond', Georgia, serif; font-style: italic; font-weight: 500; }
+.neo-slide .neo-ph { font-size: 0.85rem; color: #9ca3af; }
+.neo-slide .neo-main { align-items: start; margin-top: 1.8rem; }
+.neo-slide .neo-eyebrow { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.18em; color: #9ca3af; font-weight: 600; }
+.neo-slide .neo-h1 { font-family: 'EB Garamond', Georgia, serif; font-weight: 400; font-size: 3rem; line-height: 1.08; color: #393f49; margin: 0.5rem 0 0 0; letter-spacing: 0; }
+.neo-slide .neo-h1 em { color: #1d4ed8; font-style: italic; }
+.neo-slide .neo-body { font-family: 'Inter', sans-serif; font-size: 1.12rem; color: #4b5563; line-height: 1.5; margin-top: 1.3rem; max-width: 34ch; }
+.neo-slide .neo-body strong { color: #111827; font-weight: 700; }
+.neo-slide .neo-feats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem 1.4rem; padding-top: 0.4rem; }
+.neo-slide .neo-flabel { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: #9ca3af; font-weight: 700; }
+.neo-slide .neo-fval { font-size: 1rem; color: #374151; margin-top: 0.35rem; line-height: 1.35; }
+.neo-slide .neo-tie { margin-top: 2rem; font-size: 1rem; color: #6b7280; }
+.neo-slide .neo-tie strong { color: #1d4ed8; font-weight: 600; }
+</style>
+
+<!--
+Quick product context. The service we just talked about powers BrowserOS neo: a free, open-source browser that AI agents drive using your real, logged-in accounts. Import your Chrome logins, point Claude Code or Codex at it, run a fleet at once, and replay what they did. Its local backend is claw-server, which is exactly the TypeScript-to-Rust case study we are about to walk through.
+-->
+
+---
 layout: statement
 ---
 
