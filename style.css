@@ -1,0 +1,174 @@
+/* Self-hosted Geist (variable) so the deck runs offline during the talk */
+@import '@fontsource-variable/geist/index.css';
+@import '@fontsource-variable/geist-mono/index.css';
+
+:root {
+  --color-signal-orange: #ff5b29;
+  --color-chartreuse-highlight: #f5ff80;
+  --color-carbon-black: #000000;
+  --color-paper-white: #fafafa;
+  --color-graphite: #242424;
+  --color-steel: #6c6c6c;
+  --color-ash: #b3b3b3;
+
+  --font-geist: 'Geist Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-geist-mono: 'Geist Mono Variable', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --shadow-hard: 5px 5px 0 0 #000;
+  --grid-pitch: 22px;
+
+  --slidev-font-sans: var(--font-geist);
+  --slidev-font-mono: var(--font-geist-mono);
+}
+
+/* ---- Paper canvas + graph-paper grid (light-primary) ---- */
+.slidev-layout {
+  font-family: var(--font-geist);
+  color: var(--color-carbon-black);
+  background-color: var(--color-paper-white);
+  background-image: radial-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+  background-size: var(--grid-pitch) var(--grid-pitch);
+  background-position: -1px -1px;
+  padding: 3rem 4rem;
+  letter-spacing: -0.01em;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.slidev-layout h1 {
+  font-weight: 700;
+  font-size: 3.1rem;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.2rem;
+}
+.slidev-layout h2 {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.8rem;
+}
+.slidev-layout h3 {
+  font-weight: 600;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+}
+.slidev-layout p,
+.slidev-layout li {
+  color: var(--color-carbon-black);
+}
+.slidev-layout .muted,
+.slidev-layout .steel {
+  color: var(--color-steel);
+}
+/* Orange is emphasis, never body. **word** in a headline lights up. */
+.slidev-layout strong {
+  color: var(--color-signal-orange);
+  font-weight: 700;
+}
+
+/* ---- Inverted slides (Carbon / Graphite) ---- */
+.slidev-layout.-invert,
+.slidev-layout.-carbon,
+.slidev-layout.-graphite {
+  color: var(--color-paper-white);
+  background-color: var(--color-carbon-black);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.10) 1px, transparent 1px);
+}
+.slidev-layout.-graphite {
+  background-color: var(--color-graphite);
+}
+.slidev-layout.-invert h1,
+.slidev-layout.-invert h2,
+.slidev-layout.-invert p,
+.slidev-layout.-invert li,
+.slidev-layout.-carbon h1,
+.slidev-layout.-graphite h1 {
+  color: var(--color-paper-white);
+}
+
+/* ---- Mono helper + inline code ---- */
+.mono { font-family: var(--font-geist-mono); font-feature-settings: 'tnum' 1; }
+.slidev-layout :not(pre) > code {
+  font-family: var(--font-geist-mono);
+  font-size: 0.86em;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 0.05em 0.34em;
+  color: var(--color-carbon-black);
+}
+
+/* ---- Code blocks: bordered hard-shadow card, projector-legible ---- */
+.slidev-layout pre.slidev-code,
+.slidev-layout .slidev-code-wrapper pre,
+.slidev-layout pre {
+  border: 1px solid #000;
+  border-radius: 12px;
+  box-shadow: var(--shadow-hard);
+  font-family: var(--font-geist-mono) !important;
+  font-size: 1.02rem;
+  line-height: 1.5;
+  padding: 1.1rem 1.3rem;
+}
+.slidev-layout .shiki,
+.slidev-layout .shiki span { font-family: var(--font-geist-mono) !important; }
+
+/* ---- Pill / tag ---- */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-family: var(--font-geist-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-carbon-black);
+  background: var(--color-paper-white);
+  border: 1px solid var(--color-carbon-black);
+  border-radius: 9999px;
+  padding: 0.28em 0.8em;
+}
+.pill.-spot { background: var(--color-chartreuse-highlight); }
+.pill.-on-dark { color: var(--color-paper-white); background: transparent; border-color: var(--color-paper-white); }
+
+/* ---- Eyebrow ---- */
+.eyebrow {
+  font-family: var(--font-geist-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-steel);
+}
+
+/* ---- Cards (feature / parity / spectrum) ---- */
+.card {
+  background: var(--color-paper-white);
+  border: 1px solid var(--color-carbon-black);
+  border-radius: 12px;
+  box-shadow: var(--shadow-hard);
+  padding: 1.2rem 1.3rem;
+}
+
+/* ---- Chartreuse spotlight callout (rationed) ---- */
+.spotlight {
+  background: var(--color-chartreuse-highlight);
+  border: 1px solid var(--color-carbon-black);
+  border-radius: 12px;
+  box-shadow: var(--shadow-hard);
+  padding: 1rem 1.3rem;
+  color: var(--color-carbon-black);
+}
+
+/* Code line focus: dim the non-highlighted lines (Slidev default behavior),
+   plus a thin signal-orange marker on the focused lines. */
+.slidev-layout .slidev-code .line.highlighted {
+  background: rgba(255, 91, 41, 0.10);
+}
+.slidev-layout .slidev-code .line:not(.highlighted) {
+  opacity: 0.4;
+  filter: grayscale(0.4);
+}
