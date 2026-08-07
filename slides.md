@@ -406,7 +406,7 @@ layout: statement
 
 # Now the server can be anything. <strong>It became Rust.</strong>
 
-<div class="mono" style="color: var(--color-ash); font-size: 1.05rem; margin-top: 1rem;">axum · sea-orm · rmcp &nbsp;·&nbsp; phased over about a month · 98 commits</div>
+<div class="mono" style="color: var(--color-ash); font-size: 1.05rem; margin-top: 1rem;">axum · sea-orm · rmcp &nbsp;·&nbsp; phased A to D · 98 commits</div>
 
 ---
 
@@ -527,7 +527,7 @@ layout: statement
 <StatCard :items="[
   { n: '205/205', l: 'cross-server tests passing' },
   { n: '37', l: 'agent review · 10 findings fixed' },
-  { n: '98', l: 'commits · about one month' },
+  { n: '98', l: 'commits, all test-gated' },
 ]" />
 </div>
 
